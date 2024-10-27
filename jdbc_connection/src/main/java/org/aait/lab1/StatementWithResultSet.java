@@ -12,7 +12,7 @@ public class StatementWithResultSet {
     public static void main(String[] args) throws SQLException {
         String url = "jdbc:mysql://localhost:3306/";
         String username = "root";
-        String password = "Remember2020!!!!!";
+        String password = "my_password";
         String databaseName = "teachersdb";
         String tableName = "teachers";
         String createDatabaseQuery = "create database " + databaseName;
