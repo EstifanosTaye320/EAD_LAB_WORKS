@@ -14,6 +14,7 @@ public class JDBCDemo {
         String url = "jdbc:mysql://localhost:3306/church_db";
         String username = "root";
         String password = "my_password";
+
         try (Connection conn = DriverManager.getConnection(url, username, password);) {
             Class.forName(driver);
 
