@@ -13,16 +13,16 @@ public class CreateDatabaseExample {
         String password = "Remember2020!!!!!";
         String databaseName = "StudentDB";
 
-        try {
-            Connection connection = DriverManager.getConnection(url, username, password);
-            Statement statement = connection.createStatement();
+        try (Connection connection = DriverManager.getConnection(url, username, password); Statement statement = connection.createStatement()) {
 
             String createDataBaseCommand = "create database " + databaseName;
             statement.executeUpdate(createDataBaseCommand);
 
             System.out.println("Database " + databaseName + " created!");
+
         } catch (SQLException e) {
             System.err.println(e);
         }
+
     }
 }
