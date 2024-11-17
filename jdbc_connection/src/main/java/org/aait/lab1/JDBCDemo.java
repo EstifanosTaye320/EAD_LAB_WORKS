@@ -2,7 +2,7 @@ package org.aait.lab1;
 
 /**
  *
- * @author Admin 
+ * @author Admin
  */
 import java.sql.Connection;
 import java.sql.DriverManager;
