@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="ISO-8859-1">
+      <title>Calculator</title>
+      <link rel="stylesheet" href="css/bootstrap.css">
+   </head>
+   <body class="d-flex justify-content-center align-items-center vh-100">
+      <form action="OperationServlet" method="get" style="width: 400px">
+      	<h2 class="text-center">Simple Calculator</h2>
+      	<table class="w-100 table table-hover">
+      		<tr>
+      			<td>Number 1</td>
+      			<td class="text-end"><input type="number" name="num1" placeholder="Enter number 1" required></td>	
+      		</tr>
+      		<tr>
+      			<td>Number 2</td>
+      			<td class="text-end"><input type="number" name="num2" placeholder="Enter number 2" required></td>	
+      		</tr>
+      		<tr>
+      			<td>Operation</td>
+      			<td class="text-end">
+      				<select name="Operation" class="w-100">
+		                <option value="add">Addition (+)<option>
+		                <option value="subtract">Subtraction (-)<option>
+		                <option value="divide">Division (/)<option>
+		                <option value="multiply">Multiplication (*)<option>
+			        </select>
+      			</td>	
+      		</tr>
+      		<tr>
+      			<td class="w-100">
+      				<input type="submit" value="Calculate">
+      			</td>
+      		</tr>
+      	</table>   
+      </form>
+   </body>
+</html>
