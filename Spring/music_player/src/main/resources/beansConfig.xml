@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="
+ http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+https://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/aop
+https://www.springframework.org/schema/aop/spring-aop.xsd">
+	<bean id="speaker" class="com.music.player.Speakers">
+		<property name="soundVolume" value="3"></property>
+		<constructor-arg name="device" value="Nice speaker"></constructor-arg>
+	</bean>
+	
+	<bean id="headphone" class="com.music.player.HeadPhones">
+		<property name="soundVolume" value="10"></property>
+		<constructor-arg name="device" value="Nice headphones"></constructor-arg>
+	</bean>
+
+	<bean id="mp3" class="com.music.player.Mp3Player">
+		<property name="outputDevice" ref="speaker"></property>
+	</bean>
+	
+	<bean id="cd" class="com.music.player.CdPlayer">
+		<property name="outputDevice" ref="headphone"></property>
+	</bean>
+</beans>

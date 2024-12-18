@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+ 		http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="aau" class="com.itsc.di.University">
+		<property name="name" value="Addis Ababa"></property>
+		<constructor-arg name="cname" value="Ababa Addis"></constructor-arg>
+	</bean>
+
+
+	<bean id="stu" class="com.itsc.di.Student">
+		<property name="studentName" value="Estifanos"></property>
+		<property name="university" ref="aau"></property>
+		<constructor-arg name="cstudentName" value="Taye"></constructor-arg>
+		<constructor-arg name="cuniversity" ref="aau"></constructor-arg>
+	</bean>
+	
+	<bean id="teacher" class="com.itsc.di.Teacher">
+		<constructor-arg name="teacherName" value="yarad"></constructor-arg>
+		<constructor-arg name="university" ref="aau"></constructor-arg>
+	</bean>
+
+</beans>

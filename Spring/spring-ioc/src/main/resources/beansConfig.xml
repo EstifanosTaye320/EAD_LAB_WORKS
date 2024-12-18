@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="
+ http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+https://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/aop
+https://www.springframework.org/schema/aop/spring-aop.xsd">
+	<!-- bean definitions here -->
+	<bean id="ethiotel" class="com.telecommunication.sim.EthioSim">
+		<property name="property" value="phone of user"></property>
+		<constructor-arg value="EthioTel Mobile Network"></constructor-arg>
+		<constructor-arg value="0911121314"></constructor-arg>
+	</bean>
+	
+	<bean id="safari" class="com.telecommunication.sim.SafariSim">
+		<property name="property" value="phone of user"></property>
+		<constructor-arg value="Safaricom Mobile Network"></constructor-arg>
+		<constructor-arg value="0941312111"></constructor-arg>
+	</bean>
+	
+	<bean id="sim" class="com.telecommunication.sim.EthioSim">
+		<property name="property" value="phone of user"></property>
+		<constructor-arg value="EthioTel Mobile Network"></constructor-arg>
+		<constructor-arg value="0911121314"></constructor-arg>
+	</bean>
+</beans>

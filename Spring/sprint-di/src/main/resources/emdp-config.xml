@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+ 		http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd">
+		
+		<bean id="emp1" class="com.employee.department.Employee">
+			<constructor-arg value="Estif"></constructor-arg>
+			<constructor-arg value="1"></constructor-arg>
+		</bean>
+		<bean id="emp2" class="com.employee.department.Employee">
+			<constructor-arg value="Flave"></constructor-arg>
+			<constructor-arg value="2"></constructor-arg>
+		</bean>
+		
+		<bean id="dep1" class="com.employee.department.Department">
+			<constructor-arg value="Engineering"></constructor-arg>
+			<constructor-arg>
+				<list>
+					<ref bean="emp1"></ref>
+				</list>
+			</constructor-arg>
+		</bean>
+		<bean id="dep2" class="com.employee.department.Department">
+			<constructor-arg value="Electrical"></constructor-arg>
+			<constructor-arg>
+				<list>
+					<ref bean="emp2"></ref>
+				</list>
+			</constructor-arg>
+		</bean>
+		
+		<bean id="emdp" class="com.employee.department.EmDpManagement">
+			<constructor-arg>
+				<list>
+					<ref bean="emp1"></ref>
+					<ref bean="emp2"></ref>
+				</list>
+			</constructor-arg>
+			<constructor-arg>
+				<list>
+					<ref bean="dep1"></ref>
+					<ref bean="dep2"></ref>
+				</list>
+			</constructor-arg>
+
+		</bean>
+
+</beans>
