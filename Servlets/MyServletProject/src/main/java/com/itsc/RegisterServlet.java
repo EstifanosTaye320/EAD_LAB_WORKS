@@ -37,7 +37,7 @@ public class RegisterServlet extends HttpServlet {
             cnf.printStackTrace();
         }
         //generate the connection
-        try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/book", "root", "Remember2020!!!!!"); PreparedStatement ps = con.prepareStatement(query);) {
+        try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/book", "root", ""); PreparedStatement ps = con.prepareStatement(query);) {
             ps.setString(1, bookName);
             ps.setString(2, bookEdition);
             ps.setFloat(3, bookPrice);

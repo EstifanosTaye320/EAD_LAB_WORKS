@@ -34,7 +34,7 @@ public class BookListServlet extends HttpServlet {
             cnf.printStackTrace();
         }
         //generate the connection
-        try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/book", "root", "Remember2020!!!!!"); PreparedStatement ps = con.prepareStatement(query);) {
+        try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/book", "root", ""); PreparedStatement ps = con.prepareStatement(query);) {
             ResultSet rs = ps.executeQuery();
             pw.println("<table border='1' align='center'>");
             pw.println("<tr>");
