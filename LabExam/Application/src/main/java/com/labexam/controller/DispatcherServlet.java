@@ -5,7 +5,6 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-
 import java.io.IOException;
 
 public class DispatcherServlet extends HttpServlet {
@@ -44,15 +43,18 @@ public class DispatcherServlet extends HttpServlet {
                     request.getRequestDispatcher("/taskList").forward(request, response);
                 } else if (requestPath.startsWith("/") || requestPath.startsWith("/index.html")) {
                     request.getRequestDispatcher("/index.html").forward(request, response);
-                } else if (requestPath.startsWith("/search.html")) {
+                }  else if (requestPath.startsWith("/search.html")) {
                     request.getRequestDispatcher("/search.html").forward(request, response);
                 } else if (requestPath.startsWith("/logout")){
                   request.getRequestDispatcher("/logout").forward(request,response);
                 }
                 else if (requestPath.startsWith("/addTask.html")) {
                   request.getRequestDispatcher("/addTask.html").forward(request, response);
+                } else if(requestPath.startsWith("/editScreen")){
+                   request.getRequestDispatcher("/editScreen").forward(request, response);
+                } else if(requestPath.startsWith("/editurl")){
+                  request.getRequestDispatcher("/editurl").forward(request,response);
                 }
-
                  else {
                     response.getWriter().println("Invalid URL");
                     response.setStatus(HttpServletResponse.SC_NOT_FOUND);
