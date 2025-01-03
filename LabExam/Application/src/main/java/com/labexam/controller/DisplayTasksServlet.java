@@ -22,7 +22,8 @@ public class DisplayTasksServlet extends HttpServlet {
 
     @Autowired
     private DBConnectionManager manager;
-    private final String query = "SELECT ID,description,status,due_date FROM " + manager.getTableName();
+    private String tableName = "tasks";
+    private final String query = "SELECT ID,description,status,due_date FROM " + tableName;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {

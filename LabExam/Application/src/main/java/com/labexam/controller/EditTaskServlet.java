@@ -18,7 +18,8 @@ public class EditTaskServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	@Autowired
 	private DBConnectionManager manager;
-	private final String query = "update "+manager.getTableName()+" set description=?,status=?,due_date=? where id=?";
+	private String tableName = "tasks";
+	private final String query = "update "+tableName+" set description=?,status=?,due_date=? where id=?";
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {

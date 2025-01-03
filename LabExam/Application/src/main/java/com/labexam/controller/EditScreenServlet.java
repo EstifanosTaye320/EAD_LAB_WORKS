@@ -20,7 +20,8 @@ public class EditScreenServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     @Autowired
 	private DBConnectionManager manager;
-	private final String query = "SELECT description,status,due_date FROM " + manager.getTableName() + " where id=?";
+    private String tableName = "tasks";
+	private final String query = "SELECT description,status,due_date FROM " + tableName + " where id=?";
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
