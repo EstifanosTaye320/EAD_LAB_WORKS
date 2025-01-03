@@ -20,7 +20,7 @@ public class DeleteTaskServlet extends HttpServlet {
     
     @Autowired
     private DBConnectionManager manager;
-    private static final String query = "delete from tasks where id=?";
+    private final String query = "delete from " + manager.getTableName() +" where id=?";
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {

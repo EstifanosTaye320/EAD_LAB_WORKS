@@ -23,7 +23,7 @@ public class TaskRegistrationServlet extends HttpServlet {
     @Autowired
     private DBConnectionManager manager;
 
-    private static final String query = "INSERT INTO tasks (description,status,due_date) VALUES(?,?,?)";
+    private final String query = "INSERT INTO " + manager.getTableName() + " (description,status,due_date) VALUES(?,?,?)";
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {

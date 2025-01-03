@@ -21,7 +21,7 @@ public class SearchTaskServlet extends HttpServlet {
     
     @Autowired
     private DBConnectionManager manager;
-    private static final String query = "SELECT ID,description,status,due_date FROM tasks";
+    private final String query = "SELECT ID,description,status,due_date FROM " + manager.getTableName();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
